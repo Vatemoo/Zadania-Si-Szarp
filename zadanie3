@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp260a
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            decimal[] liczby = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
+            Console.WriteLine(Maksymalna(liczby));
+            Console.WriteLine(IleZnakow("wyreworwelowanyrewolwerowiec", 'o'));
+            string[] teksty = { "ciągnik", "karnet", "flet" };
+            WyswietlTekstNaZadanaLitere(teksty, 'f');
+            Console.WriteLine(Silnia(9));
+
+            Console.ReadKey();
+        }
+        //PAMIĘTAJ, ŻEBY DODAĆ OSTATNIE!!!
+        static public decimal Maksymalna(decimal[] liczby)
+        {
+            Console.WriteLine("Największa liczba to: ");
+            return liczby.Max();
+        }
+
+        static public int Silnia(int liczba)
+        {
+            if (liczba < 1)
+                return 1;
+            else
+                return liczba * Silnia(liczba - 1);
+            
+        }
+
+        static public int IleZnakow(string tekst, char znak)
+        {
+            int iloscZnaku = 0;
+            foreach (char elem in tekst)
+            {
+                if (elem == znak)
+                {
+                    iloscZnaku++;
+                }
+            }
+            Console.WriteLine("Litera znajduję się w wyrazie tyle razy: ");
+            return iloscZnaku;
+        }
+
+        static public void WyswietlTekstNaZadanaLitere(string[] teksty, char znak)
+        {
+            foreach (string elem in teksty)
+            {
+                if (elem[0] == znak)
+                {
+                    Console.WriteLine("Wyraz na podaną literę to: ");
+                    Console.WriteLine(elem);
+                }
+            }
+        }
+    }
+}
