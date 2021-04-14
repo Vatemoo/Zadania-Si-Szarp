@@ -1,0 +1,159 @@
+Część 1 zadań
+public static int Convert(int minutes)
+        {
+            return minutes * 60;
+        }
+        public static int Addition(int number)
+        {
+            return number++;
+        }
+
+        public static int CalcAge (int age)
+        {
+            return age * 365;
+        }
+
+        public static double triArea(int a, int h)
+        {
+            return 0.5 * a * h;
+        }
+
+        public static bool IsEqual (int a, int b)
+        {
+            return a == b;
+        }
+
+        public static int howManySeconds (int hours)
+        {
+            return hours * 3200;
+        }
+
+        public static int animals(int chicken, int cow, int pig)
+        {
+            return chicken * 2 + (cow + pig) * 4;
+        }
+        public static float inchesToFeet(int inches)
+        {
+            return 1 / 12 * inches;
+        }
+        public static int Convert(int hours, int minutes)
+        {
+            return hours * 3200 + minutes * 60;
+        }
+
+        public static string MonthName(int monthNumber)
+        {
+            string month = DateTimeFormatInfo.CurrentInfo.GetMonthName(monthNumber);
+            return month;
+        }
+        public static int getAbsSum(int[] array)
+        {
+            return (array.Sum(i => Math.Abs(i)));
+        }
+        
+        
+        
+        
+        
+  Część 2 zadań
+  class Class1
+    {
+        public static string reverseCase(string phrase)
+        {
+
+            string phrase2 = "";
+
+            foreach (char i in phrase)
+            {
+                if (char.IsUpper(i))
+                {
+                    phrase2 += (Char.ToLower(i));
+                }
+                else
+                {
+                    phrase2 += (Char.ToUpper(i));
+                }
+            }
+            return phrase2;
+        }
+
+        public static int Potatoes(string bajojajo)
+        {
+            return System.Text.RegularExpressions.Regex.Matches(bajojajo, "jajo").Count;
+        }
+
+        public static string getMiddle(string phrase)
+        {
+            int offset = phrase.Length % 2 == 0 ? 1 : 0; //sprawdzenie czy potrzebny będzie 1 czy 2 znaki
+            return phrase.Substring(phrase.Length / 2 - offset, offset + 1);
+        }
+        public static bool validatePIN(string PIN)
+        {
+            if ((PIN.Length == 4 || PIN.Length == 6) && PIN.All(char.IsDigit))
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool isSymmetrical(string phrase)
+        {
+            string reversed = "";
+            for (int i = phrase.Length - 1; i >= 0; i--)
+            {
+                reversed += phrase[i];
+            }
+            if (reversed == phrase)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public static bool hasFriday13th(int month, int year)
+        {
+            DateTime date = new DateTime(year, month, 13);
+
+            if (date.DayOfWeek == DayOfWeek.Friday)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static string FindNemo(string phrase)
+        {
+            string[] s = phrase.Split();
+            int i = 0;
+            foreach (string elem in s)
+            {
+                i++;
+                if (elem == "Nemo")
+                {
+                    return $"I found Nemo at {i}";
+                }
+            }
+            return "There is no Nemo :C";
+        }
+        public static void sortDescending(uint number)
+        {
+            int[] arr = number.ToString().ToCharArray().Select(x => (int)Char.GetNumericValue(x)).ToArray(); //zamiana uinta na tablice intów
+            Array.Sort(arr);
+            Array.Reverse(arr);
+            foreach (int i in arr)
+            {
+                Console.Write(i);
+            }
+        }
+
+    }
