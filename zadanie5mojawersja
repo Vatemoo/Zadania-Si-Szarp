@@ -1,0 +1,117 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ZADANIA
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Convert1(7));
+            Console.WriteLine(Addition(101));
+            Console.WriteLine(CalcAge(2));
+            Console.WriteLine(triArea(5, 6));
+            Console.WriteLine(IsEqual(6, 6));
+            Console.WriteLine(howManySeconds(2));
+            Console.WriteLine(animals(3, 2, 1));
+            Console.WriteLine(inchesToFeet(324));
+            Console.WriteLine(Convert2(5, 10));
+            Console.WriteLine(MonthName(4));
+            int[] getAbs = { -20, 20 };
+            Console.WriteLine(getAbsSum(getAbs));
+            Console.WriteLine(reverseCase("Bobert Rabiński"));
+            Console.ReadKey();
+        }
+
+        //minuty na sekundy
+        public static int Convert1(int minuty)
+        {
+            return minuty * 60;
+        }
+
+        //o jeden większa
+        public static int Addition(int number)
+        {
+            return number + 1;
+        }
+
+        //wiek na dni
+        public static int CalcAge(int wiek)
+        {
+            return wiek * 365;
+        }
+
+        //pole trójkąta
+        public static double triArea(int a, int h)
+        {
+            return 0.5 * a * h;
+        }
+
+        //czy są równe
+        public static bool IsEqual(int a, int b)
+        {
+            return a == b;
+        }
+
+        //godziny na sekundy
+        public static int howManySeconds(int godziny)
+        {
+            return godziny * 3600;
+        }
+
+        //ile nóg mają zwierzęta
+        public static int animals(int krowa, int świnia, int kurczak)
+        {
+            return  krowa * 4 + świnia * 4 + kurczak * 2;
+        }
+
+        //cale na stopy
+        public static double inchesToFeet(float inches)
+        {
+            return 0.083 * inches;
+        }
+
+        //godziny i minuty na sekundy
+        public static int Convert2(int godziny, int minuty)
+        {
+            return godziny * 3200 + minuty * 60;
+        }
+
+
+        //cyfra na nazwę miesiąca
+        public static string MonthName(int monthNumber)
+        {
+            string month = DateTimeFormatInfo.CurrentInfo.GetMonthName(monthNumber);
+            return month;
+        }
+        public static int getAbsSum(int[] array)
+        {
+            return (array.Sum(i => Math.Abs(i)));
+        }
+
+        //zmiana wielkości liter
+        public static string reverseCase(string phrase)
+        {
+
+            string phrase2 = "";
+
+            foreach (char i in phrase)
+            {
+                if (char.IsUpper(i))
+                {
+                    phrase2 += (Char.ToLower(i));
+                }
+                else
+                {
+                    phrase2 += (Char.ToUpper(i));
+                }
+            }
+            return phrase2;
+        }
+
+    }
+}
